@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>ЮЗФА</h1>
+    <select class="select">
+        <option value="камінь">Камінь</option>
+        <option value="бумага">Бумага</option>
+        <option value="колодязь">Колодязь</option>
+        <option value="ножниці">Ножниці</option>
+    </select>
+    <button class="btn">Грати</button>
+    <h2 class="out"></h2>
+
+
+    <script>
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+
+
+
+        let sel = document.querySelector('.select')
+        let btn = document.querySelector('.btn')
+        let out = document.querySelector('.out')
+
+        btn.onclick = () => {
+
+            let compSelect = Math.round(getRandomArbitrary(1, 4))
+
+            console.log(compSelect);
+
+            // out.innerHTML = `Камінь vs Колодязь = Перемога!!`
+
+            // compSelect = це вибір компютера
+
+        }
+    </script>
+</body>
+
+</html>
