@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input class="inp" type="number">
+    <h5 class="out">0</h5>
+    <button class="btn">Sum</button>
+
+
+
+    <h4>Block 2</h4>
+    <div class="out002"></div>
+    <script>
+        let inp = document.querySelector('.inp');
+        let out = document.querySelector('.out');
+        let out2 = document.querySelector('.out002');
+        let btn = document.querySelector('.btn');
+
+        // Function declaration
+        //Назва
+        function Test(a, b) {
+            console.log(a + b);
+        }
+
+
+        function creatCart(res) {
+            out.innerHTML = `
+            <div>
+              <h2>${res}</h2>   
+            </div>
+            `
+        }
+
+        function creatCartReturn(res) {
+            return (
+                `
+                <div>
+                <h2>${res}</h2>   
+                </div>
+                `
+            )
+        }
+
+        btn.onclick = () => {
+            if (+inp.value > 18) {
+                out.innerHTML = creatCartReturn("Годен")
+            } else {
+                out2.innerHTML = creatCartReturn("Не годен")
+            }
+        }
+
+
+
+
+
+        // Function EXPRESSION
+
+        let Test2 = function () { }
+
+
+
+// Function Arrow
+
+
+
+
+// Function anonim
+
+
+
+
+    </script>
+</body>
+
+</html>
