@@ -26,7 +26,7 @@
         // Function declaration
         //Назва
         function Test(a, b) {
-            console.log(a + b);
+            console.log(a * b);
         }
 
 
@@ -48,13 +48,13 @@
             )
         }
 
-        btn.onclick = () => {
-            if (+inp.value > 18) {
-                out.innerHTML = creatCartReturn("Годен")
-            } else {
-                out2.innerHTML = creatCartReturn("Не годен")
-            }
-        }
+        // btn.onclick = () => {
+        //     if (+inp.value > 18) {
+        //         out.innerHTML = creatCartReturn("Годен")
+        //     } else {
+        //         out2.innerHTML = creatCartReturn("Не годен")
+        //     }
+        // }
 
 
 
@@ -62,16 +62,33 @@
 
         // Function EXPRESSION
 
-        let Test2 = function () { }
+        let Test2 = function () {
+
+            console.log("EXPRESSION = " + 2 * 2);
+        }
+        Test2()
+
+        // Function Arrow
 
 
 
-// Function Arrow
+        let calk1 = (a, b) => console.log('Arrow = ' + a * b);
 
+        function test() {
+            console.log("Sasha");
+        }
 
+        btn.onclick = () => Test(5, 7)
 
+        // Function anonim
 
-// Function anonim
+        function TestQ() {
+            return (
+                "Sasha"
+            )
+        }
+
+        console.log(TestQ());
 
 
 

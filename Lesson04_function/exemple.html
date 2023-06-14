@@ -25,19 +25,27 @@
     </div>
     <button class="search">Search</button>
 
+    <select>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+    </select>
+
 
     <script>
         let out = document.querySelector('.out')
         let search = document.querySelector('.search')
-
+        loopCart()
 
         function createCart() { }
 
 
-
-        for (let i = 0; i < 10; i++) {
-            out.innerHTML += i
+        function loopCart() {
+            for (let i = 0; i < 10; i++) {
+                out.innerHTML += i
+            }
         }
+
     </script>
 </body>
 
