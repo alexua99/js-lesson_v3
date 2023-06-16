@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            border: 1px solid red;
+            padding: 10px;
+            width: fit-content;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input type="text">
+
+
+    <script>
+
+
+
+        let year = new Date().getFullYear(); // 2020
+
+
+        const User = {
+            // Обєкт це завжди ключ значення
+            name: "Sasha",
+            avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHUlP6F15TiQpEK3oo9uzyvk0gFBypWJqAA&usqp=CAU",
+            age: 1990,
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, voluptatem?",
+            isLogin: true,
+            glass: 10,
+            favoritMovie: {
+                movie1: "Star Wars",
+                movie2: "Potter",
+            },
+            fullAdge: function () {
+                return year - this.age
+            }
+        } // Обєкт це фігурні дужки
+        const Arr = [1, 2, 3, 4, 5] // Массив це фігурні дужки
+
+
+        User.name = "Ola"
+        User.password = 123445
+        delete User.password
+
+        console.log(Arr)
+        console.log(User);
+
+        if (User.glass > 8) {
+            console.log(User.glass);
+        }
+        // Деструктуризація
+        const { movie1, movie2 } = User.favoritMovie;
+
+        console.log("Деструктуризація = " + movie2);
+
+
+        for (let key in User) {
+            // console.log(`Ключ: ${key},  Значення: ${User[key]}`);
+
+            if (typeof User[key] == 'object') {
+                for (let key2 in User[key]) {
+                    console.log(key2);
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

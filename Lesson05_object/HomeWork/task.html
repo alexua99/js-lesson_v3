@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item {
+            border: 1px solid red;
+            padding: 10px;
+            width: fit-content;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="out">
+
+    </div>
+
+    <script>
+        let out = document.querySelector('.out')
+
+
+        let year = new Date().getFullYear(); // 2020
+
+
+        const User = {
+            // Обєкт це завжди ключ значення
+            name: "Sasha",
+            avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHUlP6F15TiQpEK3oo9uzyvk0gFBypWJqAA&usqp=CAU",
+            age: 1990,
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, voluptatem?",
+            isLogin: true,
+            favoritMovie: {
+                movie1: "Star Wars"
+            },
+            fullAdge: function () {
+                return year - this.age
+            }
+        } // Обєкт це фігурні дужки
+
+        function CreateUserCart() { }
+
+
+        out.innerHTML = `
+            <div class="item">
+                <img src="${User.avatar}" alt="" width="50">
+                <h2>${User.name}</h2>
+                <p>Вік: ${User.fullAdge()}</p>
+            </div>
+        `
+        let item = document.querySelector('.item')
+        item.onclick = () => {
+            out.innerHTML = `
+            <div class="item">
+                <span class="back"><==</span>
+                <img src="${User.avatar}" alt="" width="50">
+                <h2>${User.name}</h2>
+                <p>${User.description}</p>
+                <p>Вік: ${User.fullAdge()}</p>
+            </div>
+        `
+            let back = document.querySelector('.back');
+            back.onclick = () => {
+                out.innerHTML = `
+            <div class="item">
+                <img src="${User.avatar}" alt="" width="50">
+                <h2>${User.name}</h2>
+                <p>Вік: ${User.fullAdge()}</p>
+            </div>
+        `
+            }
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
