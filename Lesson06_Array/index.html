@@ -48,7 +48,29 @@
         arr.shift() // Видаляє перший єлемент
         arr.pop() // Видаляє останній єлемент
 
+
+        // Змінювати
+        arr[0] = "Test"
+        arr[1] = 1
+
+
+        console.log("Перший єлемент масиву = " + arr[0]);
+        arr[arr.length] = "Аналог .push()"
+        console.log(arr[arr.length - 1]);
+
         console.log(arr);
+
+
+        // Зєднання масивів
+
+        const a = [1, 2, 3, 4, 5]
+        const b = [6, 7, 8, 9, 10]
+
+        let res1 = a.concat(b)
+        let res2 = [...a, ...b]
+
+        console.log(res1);
+        console.log(res2);
 
 
         const arrTest = []

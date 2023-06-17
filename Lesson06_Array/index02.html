@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .carts {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .carts__item {
+            padding: 10px;
+            border: 1px solid;
+            border-radius: 10px;
+        }
+
+        .carts__title {
+            margin: 16px 0;
+        }
+
+        .carts__price {
+            color: blue;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header class="header">
+            <div class="search">
+                <input class="search-inp" type="text" placeholder="Search">
+                <button class="search-btn">Пошук</button>
+            </div>
+
+            <div class="category">
+                <select>
+                    <option value="all">Всі</option>
+                    <option value="mobile">Смартфони</option>
+                    <option value="tablet">Планшети</option>
+                    <option value="laptop">Ноутбуки</option>
+                </select>
+                <button>Сортувати</button>
+            </div>
+
+            <div class="price-sort">
+                <button>Від дорогих</button>
+                <button>Від дешевих</button>
+            </div>
+
+
+            <div class="header-cart">
+                <div>🛒</div>
+                <h5>0</h5>
+            </div>
+
+        </header>
+        <main>
+            <div class="container">
+                <h1>Shop "Алло"</h1>
+                <div class="carts">
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const shopItem = [
+            {
+                brand: 'Xiaomi',
+                model: 'Note 12',
+                category: 'mobile',
+                img: 'https://i.allo.ua/media/catalog/product/cache/3/small_image/212x184/9df78eab33525d08d6e5fb8d27136e95/1/1/111_result_7.jpg',
+                price: 11999
+
+            },
+            {
+                brand: 'Samsung',
+                model: 'Galaxy A24',
+                category: 'mobile',
+                img: 'https://i.allo.ua/media/catalog/product/cache/3/small_image/212x184/9df78eab33525d08d6e5fb8d27136e95/u/a/ua-galaxy-a24-sm-a245-sm-a245fzkvsek-536251666_result.jpg',
+                price: 9499
+
+            },
+            {
+                brand: 'Apple',
+                model: 'Ipad 10',
+                category: 'tablet',
+                img: 'https://i.allo.ua/media/catalog/product/cache/3/small_image/128x128/9df78eab33525d08d6e5fb8d27136e95/i/p/ipad_10.2-in_q421_wi-fi_space_gray_pdp_image_position-1b__ww-ru_1.jpg',
+                price: 12999
+
+            },
+            {
+                brand: 'Xiaomi',
+                model: 'Pad 4',
+                category: 'tablet',
+                img: 'https://i.allo.ua/media/catalog/product/cache/3/small_image/128x128/9df78eab33525d08d6e5fb8d27136e95/5/4/5445454545_1.jpg',
+                price: 8999
+
+            },
+            {
+                brand: 'Xiaomi',
+                model: 'RedmiBook 15',
+                category: 'laptop',
+                img: 'https://i.allo.ua/media/catalog/product/cache/3/small_image/128x128/9df78eab33525d08d6e5fb8d27136e95/_/9/_90_result_result_1_1.jpg',
+                price: 23000
+
+            },
+            {
+                brand: 'Apple',
+                model: 'MacBook air m1',
+                category: 'laptop',
+                img: 'https://i.allo.ua/media/catalog/product/cache/3/small_image/128x128/9df78eab33525d08d6e5fb8d27136e95/w/w/wwru_macbook-air_q121_spacegray_pdp-image-1_1.jpg',
+                price: 43000
+
+            },
+
+        ]
+
+        const out = document.querySelector('.carts')
+
+
+        function showCart() {
+
+        }
+
+        for (let i = 0; i < shopItem.length; i++) {
+            out.innerHTML += `
+            <div class="carts__item">
+                <img class="carts__img" src="${shopItem[i].img}" alt="" width="100">
+                <h3 class="carts__title">${shopItem[i].brand} ${shopItem[i].model}</h3>
+                <h2 class="carts__price">${shopItem[i].price}  ₴</h2>
+            </div> 
+            `
+        }
+    </script>
+</body>
+
+</html>

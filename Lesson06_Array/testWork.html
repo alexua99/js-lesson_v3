@@ -41,7 +41,11 @@
         }
 
         del.onclick = () => {
-            console.log("test");
+            Users.pop()
+            out.innerHTML = ''
+            for (let i = 0; i < Users.length; i++) {
+                out.innerHTML += `<h5>${Users[i]}</h5>`
+            }
         }
     </script>
 </body>
