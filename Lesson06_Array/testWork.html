@@ -12,6 +12,7 @@
     <button class="btn">add</button>
 
     <button class="show">Show all</button>
+    <button class="delete">Delete</button>
     <div class="out">-</div>
 
 
@@ -19,15 +20,27 @@
         let inp = document.querySelector('.inp')
         let btn = document.querySelector('.btn')
         let show = document.querySelector('.show')
+        let del = document.querySelector('.delete')
         let out = document.querySelector('.out')
 
         const Users = []
 
         btn.onclick = () => {
-            console.log("test");
+
+            if (inp.value) {
+                Users.push(inp.value)
+                inp.value = ''
+            }
         }
 
         show.onclick = () => {
+            out.innerHTML = ''
+            for (let i = 0; i < Users.length; i++) {
+                out.innerHTML += `<h5>${Users[i]}</h5>`
+            }
+        }
+
+        del.onclick = () => {
             console.log("test");
         }
     </script>
