@@ -55,13 +55,13 @@
             </div>
 
             <div class="category">
-                <select>
+                <select class="category__select">
                     <option value="all">Всі</option>
                     <option value="mobile">Смартфони</option>
                     <option value="tablet">Планшети</option>
                     <option value="laptop">Ноутбуки</option>
                 </select>
-                <button>Сортувати</button>
+                <button class="category__btn">Сортувати</button>
             </div>
 
             <div class="price-sort">
@@ -140,20 +140,57 @@
         ]
 
         const out = document.querySelector('.carts')
+        const select = document.querySelector('.category__select')
+        const categoryBtn = document.querySelector('.category__btn')
 
+        const searchInp = document.querySelector('.search-inp')
+        const searchBtn = document.querySelector('.search-btn')
 
-        function showCart() {
-
+        function showCart(item) {
+            return (
+                `
+                    <div class="carts__item">
+                        <img class="carts__img" src="${item.img}" alt="" width="100">
+                        <h3 class="carts__title">${item.brand} ${item.model}</h3>
+                        <h2 class="carts__price">${item.price}  ₴</h2>
+                    </div> 
+                `
+            )
         }
+        // function showCart2(img, brand, model, price) {
+        //     return (
+        //         `
+        //             <div class="carts__item">
+        //                 <img class="carts__img" src="${img}" alt="" width="100">
+        //                 <h3 class="carts__title">${brand} ${model}</h3>
+        //                 <h2 class="carts__price">${price}  ₴</h2>
+        //             </div> 
+        //         `
+        //     )
+        // }
+
+        // console.log(shopItem[0]);
+        // out.innerHTML = showCart2(shopItem[0].img, shopItem[0].brand, shopItem[0].model, shopItem[0].price)
 
         for (let i = 0; i < shopItem.length; i++) {
-            out.innerHTML += `
-            <div class="carts__item">
-                <img class="carts__img" src="${shopItem[i].img}" alt="" width="100">
-                <h3 class="carts__title">${shopItem[i].brand} ${shopItem[i].model}</h3>
-                <h2 class="carts__price">${shopItem[i].price}  ₴</h2>
-            </div> 
-            `
+            out.innerHTML += showCart(shopItem[i])
+            // out.innerHTML += showCart2(shopItem[i].img, shopItem[i].brand, shopItem[i].model, shopItem[i].price)
+        }
+
+        categoryBtn.onclick = () => {
+            out.innerHTML = ''
+            for (let i = 0; i < shopItem.length; i++) {
+                if (select.value == shopItem[i].category) {
+                    out.innerHTML += showCart(shopItem[i])
+                } else if (select.value == 'all') {
+                    out.innerHTML += showCart(shopItem[i])
+                }
+
+            }
+        }
+
+        searchBtn.onclick = () => {
+
         }
     </script>
 </body>
