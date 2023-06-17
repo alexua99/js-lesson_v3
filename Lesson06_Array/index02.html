@@ -190,8 +190,27 @@
         }
 
         searchBtn.onclick = () => {
+            out.innerHTML = ''
+            for (let i = 0; i < shopItem.length; i++) {
 
+                const lowBrand = shopItem[i].brand.toLowerCase();
+                const lowValue = searchInp.value.toLowerCase();
+
+
+                if (lowBrand == lowValue) {
+                    out.innerHTML += showCart(shopItem[i])
+                }
+            }
         }
+
+
+        // const arr = ['sasha', 'Olya', 'sveta']
+        // for (let i = 0; i < arr.length; i++) {
+
+        //     if (arr[i].indexOf('sa') >= 0) {
+        //         console.log(arr[i]);
+        //     }
+        // }
     </script>
 </body>
 

@@ -86,6 +86,17 @@
             out.innerHTML += arrTest[i] + ' '
         }
 
+        let arr2 = ['Sasha', 'Sveta', 'Kolya']
+
+        // Old
+        for (let i = 0; i < arr2.length; i++) {
+            out.innerHTML += arr2[i]
+        }
+
+        // New
+        arr2.map(item => out.innerHTML += item)
+
+
     </script>
 </body>
 
