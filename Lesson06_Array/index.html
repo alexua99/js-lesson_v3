@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button>Btn 1</button>
+    <button>Btn 2</button>
+    <button>Btn 3</button>
+
+    <h2 class="out"></h2>
+
+    <script>
+        let btn = document.querySelectorAll('button')
+        let out = document.querySelector('.out')
+
+        btn[1].onclick = () => {
+            console.log("Test");
+        }
+
+        const arr = [
+            1,
+            'Sasha',
+            true,
+            function () { console.log('test') },
+            {
+                name: "sasha",
+                age: 22
+            },
+            [1, 2, 3, 4, 5]
+            ,
+            "Sveta"
+        ]
+
+
+
+
+        // Додавання в Масив
+        arr.push("Vova") // Додаємо в кінець
+        arr.unshift('Test') // Додаємо на початок
+
+        // Видаляємо
+        arr.shift() // Видаляє перший єлемент
+        arr.pop() // Видаляє останній єлемент
+
+        console.log(arr);
+
+
+        const arrTest = []
+
+        for (let index = 0; index < arr.length; index++) {
+
+            if (typeof arr[index] == 'string') {
+                arrTest.push(arr[index])
+            }
+        }
+
+        for (let i = 0; i < arrTest.length; i++) {
+            out.innerHTML += arrTest[i] + ' '
+        }
+
+    </script>
+</body>
+
+</html>
