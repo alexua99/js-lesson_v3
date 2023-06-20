@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .color-red {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <h1 id="n1">Title</h1>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRmzi4yFgWwjqP-_PxxgdyXp4Aj4Vfp1KocQ&usqp=CAU"
+        alt="" width="300">
+
+
+    <script>
+        const title = document.getElementById('n1')
+
+        // Додавати атрибути і переписувати їх
+
+        //console.log(title.style);
+        title.setAttribute('data-speed', '1')
+        let sowAt = title.getAttribute('id')
+
+
+
+        let img = document.querySelector('img')
+
+        img.onclick = () => {
+            img.src = "https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg"
+        }
+
+
+        // Робота с классами
+        title.classList.add('active')
+        title.classList.remove('active')
+
+        title.onclick = () => {
+            title.classList.toggle("active")
+        }
+
+
+        // Додаемо контекст
+
+
+        console.log(title.innerHTML);
+        if (title.innerHTML == 'Title') {
+            console.log(true);
+        }
+
+        title.innerHTML += "Sasha";
+        title.innerText += "<h1>Sasha</h1>"
+
+
+        console.log(title);
+    </script>
+</body>
+
+</html>
