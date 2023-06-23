@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            border-radius: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="out"></div>
+
+    <div class="box"></div>
+
+
+    <script>
+
+        let out = document.querySelector('.out')
+        let box = document.querySelector('.box')
+        // document.addEventListener('keydown', function (event) {
+        //     console.log(event);
+        //     out.innerHTML += event.key
+
+        // })
+
+
+
+        // Task 
+        // При зажатій клавіші шифю єлемент рухается в два рази швидше
+        // Єлемент не повинен виходити за рамки єкрану
+
+        let move = 0;
+        document.addEventListener('keydown', function (event) {
+            console.log(event);
+            if (event.code === "ArrowRight") {
+                box.style.transform = `translateX(${move = move + 10}px)`
+            } else if (event.code === 'ArrowLeft' && move > 0) {
+                box.style.transform = `translateX(${move = move - 10}px)`
+            }
+        })
+    </script>
+</body>
+
+</html>

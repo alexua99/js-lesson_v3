@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Onclick</h2>
+    <button>Test 1 <b>test</b></button>
+
+
+    <h2>Onechange</h2>
+    <select>
+        <option value="None">---</option>
+        <option value="Ukraine">Ukraine</option>
+        <option value="USA">USA</option>
+        <option value="China">China</option>
+    </select>
+    <div class="out"></div>
+
+    <div class="box"></div>
+
+    <script>
+        let btn = document.querySelector('button')
+        let select = document.querySelector('select')
+        let out = document.querySelector('.out')
+        let box = document.querySelector('.box')
+
+        // btn.onclick = () => Click(1);
+        // btn.onclick = () => Click(2);
+
+        function Click(e) {
+            console.log("Click" + e);
+        }
+
+        function testEvent(event) {
+            console.log(event);
+            if (event.altKey) {
+                console.log("Альт натиснутий");
+            } else {
+                console.log("Альт не натиснутий");
+            }
+        }
+
+        //btn.addEventListener('click', () => Click(1), { "once": true })
+        btn.addEventListener('click', testEvent)
+
+        // Onechange
+
+        // old
+        // select.onchange = () => {
+        //     out.innerHTML = ' Ви обрали:' + select.value
+        // }
+
+        select.addEventListener('change', () => {
+            out.innerHTML = ' Ви обрали:' + select.value
+        })
+
+
+        function mouseMove(event) {
+
+            box.innerHTML = `
+            ClientX: ${event.clientX} <br>
+            ClientY: ${event.clientY}
+            `
+        }
+        box.addEventListener('mousemove', mouseMove)
+
+
+        box.addEventListener('contextmenu', function (event) {
+            console.log('Меню хтось відкрив');
+        })
+
+
+
+        // Розмір вікна 
+
+        addEventListener('resize', function () {
+            console.log(window.innerWidth);
+        })
+
+
+    </script>
+</body>
+
+</html>
