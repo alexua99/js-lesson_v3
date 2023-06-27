@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            width: 50px;
+        }
+
+        .btn {
+            width: 100px;
+            padding: 3px;
+            color: aliceblue;
+            background-color: blue;
+            border-radius: 20px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <input class="inp1" type="number">
+    +
+    <input class="inp2" type="number">
+    =
+    <span class="out"></span>
+    <div><button class="btn">Result</button></div>
+    <script>
+        let inp1 = document.querySelector('.inp1')
+        let inp2 = document.querySelector('.inp2')
+        let btn = document.querySelector('.btn')
+        let out = document.querySelector('.out')
+
+
+        btn.addEventListener('click', plas)
+
+        function plas() {
+            out.innerHTML = +inp1.value + +inp2.value
+        }
+
+        // Додаємо
+        // localStorage.setItem('num', num)
+        // Отримуємо
+        // localStorage.getItem("num")
+    </script>
+</body>
+
+</html>

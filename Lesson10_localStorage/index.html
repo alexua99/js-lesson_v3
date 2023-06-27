@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, veritatis!</h1>
+
+    <input type="text" placeholder="Name">
+
+    <script>
+        let inp = document.querySelector('input')
+
+        inp.value = localStorage.getItem('input')
+
+        inp.addEventListener('change', () => {
+            localStorage.setItem('input', inp.value)
+        })
+
+
+        let num = 100;
+        let str = "Sasha";
+
+        let arr = ['Test1', 'Test2']
+        let obj = [
+            {
+                name: 'Sasha 1',
+                age: 12
+            },
+            {
+                name: 'Sasha 2',
+                age: 22
+            },
+        ];
+
+        // Додаємо в локал сторедж
+        //setItem() приймає два аргументи 1; Ключ 2; значення
+        localStorage.setItem('num', num)
+        localStorage.setItem('srt', str)
+
+
+
+        // Видвляємо
+        //localStorage.clear()
+        localStorage.removeItem('srt')
+    </script>
+</body>
+
+</html>
