@@ -13,8 +13,11 @@
 
     <input type="text" placeholder="Name">
 
+    <button class="add">add</button>
+
     <script>
         let inp = document.querySelector('input')
+        let add = document.querySelector('.add')
 
         inp.value = localStorage.getItem('input')
 
@@ -48,6 +51,35 @@
         // Видвляємо
         //localStorage.clear()
         localStorage.removeItem('srt')
+
+
+
+        // Масиви і обєкти
+        localStorage.setItem('arr', JSON.stringify(arr))
+
+
+
+
+
+
+
+
+        add.addEventListener('click', () => {
+            obj.push(
+                {
+                    name: inp.value,
+                    age: 22
+                }
+            )
+            localStorage.setItem('obj', JSON.stringify(obj))
+            let parsObj = JSON.parse(localStorage.getItem('obj'))
+            console.log(parsObj);
+        })
+        // перевірка на наявність ключа
+        let newArr = localStorage.getItem('obj') ? JSON.parse(localStorage.getItem('obj')) : []
+        newArr.map(item => console.log(item))
+
+
     </script>
 </body>
 

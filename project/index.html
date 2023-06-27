@@ -76,7 +76,7 @@
         let sel = document.querySelector('.sel')
 
 
-        const shopItem = [
+        const shopItem = localStorage.setItem('newArr') ? localStorage.setItem('newArr') : [
             {
                 brand: 'Xiaomi',
                 model: 'Note 12',
