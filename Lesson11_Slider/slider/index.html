@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <style>
+        .swiper-slide {
+            height: 200px;
+            background-color: aqua;
+        }
+
+        .hero__pagination {
+            display: flex;
+            margin: 30px 0;
+
+        }
+
+        .swiper-pagination-bullet {
+            flex-grow: 1;
+            border-radius: 0;
+            background-color: rgba(0, 0, 255, 0.353);
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: rgb(0, 0, 255);
+            ;
+        }
+
+        .hero {
+            padding-top: 200px;
+            max-width: 700px;
+
+        }
+
+
+
+        .swiper-slide {
+            filter: blur(4px);
+            transition: all 0.5s !important;
+        }
+
+        .swiper-slide-active {
+            filter: blur(0);
+            transition: all 0.5s !important;
+            transform: translateY(-100px) !important;
+        }
+
+        .swiper-horizontal {
+            overflow: inherit !important;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="hero">
+        <div class="swiper hero__swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+            </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="hero__pagination"></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <script>
+        const swiper = new Swiper(".hero__swiper", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            loop: true,
+            centeredSlides: true,
+            pagination: {
+                el: ".hero__pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+
+</html>
