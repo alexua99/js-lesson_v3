@@ -19,11 +19,11 @@
     </div>
     <div class="pag"></div>
 
-
-
     <script>
         const out = document.querySelector('.out')
+        let btn = document.querySelector('button')
 
+        let pag = document.querySelector('.pag')
         const env = {
             name: 'https://rickandmortyapi.com/api/character',
             apiKey: 'dasECew324'
@@ -45,14 +45,30 @@
         getPerson()
 
 
+
+
         function CreateCart(item) {
             console.log(item);
             // console.log(item.results[0].name);
         }
 
-        function pagination(item) {
-            console.log(item);
+        function creatPag(item) {
+            let btn = document.createElement('button')
+            btn.innerHTML = item
+            btn.onclick = () => {
+                console.log('Ми на сторынцы:' + item);
+            }
+
+            return btn
         }
+
+        function pagination(item) {
+            for (let i = 1; i <= item; i++) {
+                pag.append(creatPag(i))
+            }
+        }
+
+
     </script>
 </body>
 
