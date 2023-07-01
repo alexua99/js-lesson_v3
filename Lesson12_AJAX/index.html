@@ -31,17 +31,26 @@
 
 
 
+        function getPerson() {
+            fetch(`${env.name}`)
+                .then(data => data.json())
+                .then(data => {
+                    console.log(data);
+                    pagination(data.info.pages)
+                    CreateCart(data.results)
+                })
+                .catch(error => console.log('Помилка серверу: ' + error))
 
-        fetch(env.name)
-            .then(data => data.json())
-            .then(data => {
-                CreateCart(data)
-            })
-            .catch(error => console.log('Помилка серверу: ' + error))
-
+        }
+        getPerson()
 
 
         function CreateCart(item) {
+            console.log(item);
+            // console.log(item.results[0].name);
+        }
+
+        function pagination(item) {
             console.log(item);
         }
     </script>
