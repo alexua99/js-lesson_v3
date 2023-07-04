@@ -38,10 +38,19 @@
         }
 
         setCity("Kyiv")
+        setCity("London")
+        setCity("Antarctica")
 
         function getCity(data) {
-            out.innerHTML = `
-            <span>${Math.floor(data.main.temp - 273)} </span> <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" width="40">
+
+            let temp = Math.floor(data.main.temp - 273);
+
+            let plus = temp > 0 ? '+' : ''
+
+            let className = temp > 0 ? 'hot' : 'ice'
+
+            out.innerHTML += `
+            <span>${plus + temp} </span> <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" width="40">
 
             
             `
