@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h2>Пошук Університету</h2>
+    <input type="text" placeholder="Назва Країни"> <button>Пошук</button> всього знайдено: <span class="out2">0</span>
+    <ul class="out">
+        <li><a href="https://karazin.ua" target="_blank">Kharkiv National University</a></li>
+    </ul>
+
+
+    <script>
+        // http://universities.hipolabs.com/search?country=ukraine
+
+        fetch('http://universities.hipolabs.com/search?country=ukraine')
+            .then(data => data.json())
+            .then(data => console.log(data))
+    </script>
+</body>
+
+</html>
