@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li><a href="https://openweathermap.org/current" target="_blank">Туторіал</a></li>
+        <li><a href="http://bulk.openweathermap.org/sample/">Країни</a></li>
+        <li><a href="https://openweathermap.org/weather-conditions">Іконки</a></li>
+    </ul>
+    <h4>Якщо температура + то підставляти + якщо меньше 0 то мінус</h4>
+    <div class="out"></div>
+    <h4>https://openweathermap.org/img/wn/{Сюди код іконки}@2x.png</h4>
+
+
+    <script>
+        const out = document.querySelector('.out')
+
+        let option = {
+            apiKey: 'baca336be074a80e96aad8bdbc68a5ec',
+            city: 'London'
+        }
+
+        // Кельвіни в Градуси відняти 273
+
+
+        function setCity(town) {
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${town}&appid=${option.apiKey}`)
+                .then(data => data.json())
+                .then(data => getCity(data))
+                .catch(err => console.log(err))
+        }
+
+        setCity("Kyiv")
+
+        function getCity(data) {
+            out.innerHTML = `
+            <span>${Math.floor(data.main.temp - 273)} </span> <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" width="40">
+
+            
+            `
+            console.log(data);
+            console.log(data.weather[0].icon);
+        }
+
+    </script>
+
+</body>
+
+</html>
