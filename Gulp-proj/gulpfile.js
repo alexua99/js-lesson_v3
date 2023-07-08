@@ -1,6 +1,7 @@
-const {src, dest, watch, parallel} = require('gulp') 
+const {src, dest, watch, series, parallel} = require('gulp') 
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps');
+var clean = require('gulp-clean');
 
 
 const option = {
@@ -30,4 +31,12 @@ function watchAll(){
     watch(`${option.src}/style/**/*.scss`, style)
 }
 
-exports.default = parallel(htmlTest, style, watchAll)
+
+// clear Dist
+
+function clear1() {
+    return src('./Dist', {read: false})
+    .pipe(clean());
+}
+
+exports.default = series(clear1, parallel( htmlTest, style, watchAll)) 
