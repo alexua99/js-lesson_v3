@@ -1,0 +1,20 @@
+$red: red;
+
+
+h1{
+    color: $red;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.header{
+    &__title {
+        color: $red2;
+        &:hover {
+            color: blue;
+        }
+    }
+    &__text {
+        margin-bottom: 20px;
+    }
+}
