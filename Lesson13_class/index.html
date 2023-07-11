@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="out"></div>
+
+    <script>
+
+        const out = document.querySelector('.out')
+
+        let obj = [
+            {
+                name: "Sasha",
+                age: 1983
+            }
+        ]
+
+
+        function createUserF(item) {
+
+            let div = document.createElement('div')
+            div.innerHTML = item.name
+
+
+            return div
+        }
+
+        // out.append(createUserF(obj[0]))
+
+
+        class createUser {
+            constructor(item) {
+                this.name = item.name,
+                    this.age = item.age
+            }
+            createUser() {
+                let div = document.createElement('div')
+                div.innerHTML = this.name
+                return div
+            }
+        }
+
+
+        // Наслідування 
+        class NewCreateUser extends createUser {
+            constructor(item) {
+                super(item)
+                this.color = item.color
+            }
+            createUser() {
+                super.createUser()
+            }
+        }
+        //console.log(new NewCreateUser(obj[0]));
+
+
+        // Геттер і Сеттер
+
+        class GeerSeter {
+            constructor(item) {
+                this.name = item.name,
+                    this.age = item.age
+            }
+
+            get Age() {
+                console.log(2023 - this.age);
+            }
+
+            set Age(newAge) {
+                this.age = newAge
+            }
+        }
+
+        let User = new GeerSeter(obj[0])
+
+        //console.log(User.Age);
+        User.Age = 1990
+        console.log(User.Age);
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
