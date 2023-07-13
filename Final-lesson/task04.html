@@ -5,30 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <style>
-        .active {
-            background-color: red;
-        }
-    </style>
 </head>
 
 <body>
-
-    <h2>Task04: to do list
-    </h2>
-
-
-    <input class="inp" type="text"> <button class="add">add</button>
-
+    <h2>Task04: to do list</h2>
+    <input type="text">
+    <button class="add">Add</button>
     <ol>
-        <li><input type="checkbox">sdkfs </li>
+
     </ol>
-
-    <div class="count">1</div>
-
+    <div class="countOut">0</div>
     <script>
 
+        const input = document.querySelector('input')
+        const btn = document.querySelector('.add')
+        const out = document.querySelector('ol')
+        const countOut = document.querySelector('.countOut')
+
+        let count = 0
+
+        btn.addEventListener('click', () => {
+
+            if (input.value) {
+                const li = document.createElement('li')
+                li.textContent = input.value
+
+                let check = document.createElement('input')
+                check.setAttribute('type', 'checkbox')
+                check.addEventListener('change', () => {
+                    if (check.checked) {
+                        countOut.textContent = --count
+                    } else if (!check.checked) {
+                        countOut.textContent = ++count
+                    }
+                })
+
+                let buttonDel = document.createElement('button')
+                buttonDel.innerHTML = "X"
+                buttonDel.addEventListener('click', () => {
+                    li.parentNode.removeChild(li)
+                    countOut.textContent = --count
+                })
+
+                countOut.textContent = ++count
+
+                li.append(check, buttonDel)
+
+                out.append(li)
+                input.value = ''
+            }
+        })
 
     </script>
 </body>
